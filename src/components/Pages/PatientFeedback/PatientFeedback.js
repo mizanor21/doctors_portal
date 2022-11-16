@@ -12,7 +12,7 @@ const PatientFeedback = () => {
                     <h3 className='text-primary text-xl font-bold'>Testimonial</h3>
                     <h1 className="text-3xl">What Our Patients Says</h1>
                 </div>
-                <div className='w-[200px]'>
+                <div className='w-28 lg:w-[200px]'>
                     <img src={icon1} alt="" className='' />
                 </div>
             </div>

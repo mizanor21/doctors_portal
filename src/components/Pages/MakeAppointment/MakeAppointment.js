@@ -9,7 +9,7 @@ const MakeAppointment = () => {
             <div className="lg:mt-48 mx-5">
                 <div className="lg:flex justify-center container mx-auto">
                     <div className="w-1/2 hidden lg:block">
-                        <img src={img1} alt='' className="-mt-48 h-[900px]" />
+                        <img src={img1} alt='' className="-mt-40 h-[800px]" />
                     </div>
                     <div className=' flex items-center lg:w-1/2 py-10 lg:py-36'>
                         <div className="">
