@@ -1,8 +1,9 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className=' bg-base-200'>
+        <div className='footer1'>
             <footer className="footer p-10 container mx-auto text-base-content">
                 <div>
                     <span className="footer-title">Services</span>

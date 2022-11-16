@@ -20,7 +20,7 @@ const PatientFeedback = () => {
                 <div className="shadow-lg p-10 rounded-lg">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
                     <div className="flex items-center mt-8">
-                        <img src={person1} alt="" className='mr-5' />
+                        <img src={person1} alt="" className='mr-5 border-4 border-primary rounded-full' />
                         <div className="">
                             <h3 className='text-xl font-bold'>Winson Herry</h3>
                             <h5 className='text-lg'>California</h5>
@@ -30,7 +30,7 @@ const PatientFeedback = () => {
                 <div className="shadow-lg p-10 rounded-lg">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
                     <div className="flex items-center mt-8">
-                        <img src={person2} alt="" className='mr-5' />
+                        <img src={person2} alt="" className='mr-5 border-4 border-primary rounded-full' />
                         <div className="">
                             <h3 className='text-xl font-bold'>Joffer Pitter</h3>
                             <h5 className='text-lg'>Dubai</h5>
@@ -40,7 +40,7 @@ const PatientFeedback = () => {
                 <div className="shadow-lg p-10 rounded-lg">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
                     <div className="flex items-center mt-8">
-                        <img src={person3} alt="" className='mr-5' />
+                        <img src={person3} alt="" className='mr-5 border-4 border-primary rounded-full' />
                         <div className="">
                             <h3 className='text-xl font-bold'>Kuffer Petter</h3>
                             <h5 className='text-lg'>Dhaka</h5>
