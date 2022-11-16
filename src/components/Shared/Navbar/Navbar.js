@@ -13,7 +13,7 @@ const Navbar = () => {
     </>
     return (
         <div className=' bg-base-100'>
-            <div className="navbar container mx-auto">
+            <div className="navbar container mx-auto flex justify-between">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,9 +30,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Get started</a>
-                </div>
+
             </div>
         </div>
     );
