@@ -4,10 +4,10 @@ import img1 from '../../../assets/images/treatment.png';
 const DentalCare = () => {
     return (
         <div>
-            <div className=" my-24 mx-5">
+            <div className=" my-24">
                 <div className="lg:flex justify-center container mx-auto">
-                    <div className="w-1/2">
-                        <img src={img1} alt='' className="max-w-[370px] md:max-w-md lg:max-w-xl rounded-lg shadow-2xl" />
+                    <div className="w-full lg:w-1/2 md:mr-5">
+                        <img src={img1} alt='' className=" rounded-lg shadow-2xl" />
                     </div>
                     <div className=' flex items-center lg:w-1/2 mt-10 md:mt-0'>
                         <div className="">
