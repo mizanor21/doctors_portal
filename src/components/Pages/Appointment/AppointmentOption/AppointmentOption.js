@@ -1,7 +1,6 @@
 import React from 'react';
-import BtnPrimary from '../../../usesComponent/BtnPrimary';
 
-const AppointmentOption = ({ appointmentOption }) => {
+const AppointmentOption = ({ appointmentOption, setTreatement }) => {
     const { name, slots } = appointmentOption;
     return (
         <div>
@@ -11,7 +10,7 @@ const AppointmentOption = ({ appointmentOption }) => {
                     <p>{slots.length > 0 ? slots[0] : 'Try Another Day'}</p>
                     <p>{slots.length} {slots.length > 1 ? 'Spaces' : 'Space'} Available</p>
                     <div className="card-actions justify-end">
-                        <BtnPrimary>Book Appointment</BtnPrimary>
+                        <label disabled={slots.length === 0} onClick={() => setTreatement(appointmentOption)} htmlFor="appointment-modal" className="btn btn-primary bg-gradient-to-r from-secondary to-primary text-white">Book Appointment</label>
                     </div>
                 </div>
             </div>
