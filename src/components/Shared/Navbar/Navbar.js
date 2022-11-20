@@ -16,10 +16,10 @@ const Navbar = () => {
         <li><Link to={'/appointment'}>Appointment</Link></li>
         <li><Link to={'/about'}>About</Link></li>
         <li><Link to={'/contact'}>Contact Us</Link></li>
+        <li><Link to={'/dashboard'}>Dashboard</Link></li>
         {
             user ?
                 <>
-                    <li><Link to={'/dashboard'}>Dashboard</Link></li>
                     <li><button onClick={handleLogOut}>Sign Out</button></li>
                 </>
                 :
