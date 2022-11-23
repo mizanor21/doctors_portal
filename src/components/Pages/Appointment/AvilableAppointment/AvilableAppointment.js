@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import AppointmentOption from '../AppointmentOption/AppointmentOption';
 import AppointmentModal from '../AppointmentModal/AppointmentModal';
+import { useQuery } from '@tanstack/react-query';
+import PrivetRoute from '../../../../routes/Routes/PrivetRoute/PrivetRoute';
 
 const AvilableAppointment = ({ selectedDate }) => {
-    const [appointmentOptions, setAppointmentOptions] = useState([]);
     const [treatement, setTreatement] = useState(null);
-    useEffect(() => {
-        fetch('appointmentOptions.json')
+    const date = format(selectedDate, 'PP');
+    const { data: appointmentOptions = [], refetch } = useQuery({
+        queryKey: ['appointmentOption', date],
+        queryFn: () => fetch(`http://localhost:5000/appointmentOption?date=${date}`)
             .then(res => res.json())
-            .then(data => setAppointmentOptions(data))
-    }, [])
+    })
 
     return (
         <div className='container mx-auto my-10'>
@@ -22,10 +24,13 @@ const AvilableAppointment = ({ selectedDate }) => {
             </div>
             {
                 treatement &&
-                <AppointmentModal
-                    selectedDate={selectedDate}
-                    treatement={treatement}
-                ></AppointmentModal>
+                <PrivetRoute>
+                    <AppointmentModal
+                        selectedDate={selectedDate}
+                        treatement={treatement}
+                        refetch={refetch}
+                    ></AppointmentModal>
+                </PrivetRoute>
 
             }
         </div>

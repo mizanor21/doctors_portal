@@ -1,23 +1,26 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSignup = data => {
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast('User created Successfully!')
+                toast.success('User created Successfully!')
                 const userInfo = {
                     displayName: data.name
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        saveUserInfo(data?.name, data?.email);
+                    })
                     .catch(err => console.log(err));
             })
             .catch(error => {
@@ -25,6 +28,23 @@ const Signup = () => {
                 toast(error.message)
             })
     }
+
+    const saveUserInfo = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Save user: ', data)
+                navigate('/');
+            })
+    }
+
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <div className="shadow-2xl rounded-xl p-10">
@@ -35,7 +55,7 @@ const Signup = () => {
                             <label className="label">
                                 <span className="label-text">Full Name <span className='text-red-700'>*</span></span>
                             </label>
-                            <input type="text"{...register("fullName", { required: "Full name is required" })} className="input input-bordered w-full" />
+                            <input type="text"{...register("name", { required: "Full name is required" })} className="input input-bordered w-full" />
 
                             {errors.fullName && <small className='text-red-600'>{errors.fullName?.message}</small>}
                         </div>
