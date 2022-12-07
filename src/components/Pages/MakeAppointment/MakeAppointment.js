@@ -8,10 +8,10 @@ const MakeAppointment = () => {
         <section className='make-appointment'>
             <div className="lg:mt-48 mx-5">
                 <div className="lg:flex justify-center container mx-auto">
-                    <div className="w-1/2 hidden lg:block">
+                    <div className="w-1/2 hidden lg:block" data-aos="fade-up" data-aos-duration="3000">
                         <img src={img1} alt='' className="-mt-40 h-[800px]" />
                     </div>
-                    <div className=' flex items-center lg:w-1/2 py-10 lg:py-36'>
+                    <div className=' flex items-center lg:w-1/2 py-10 lg:py-36' data-aos="fade-up" data-aos-duration="3000">
                         <div className="">
                             <h3 className='text-primary text-xl font-bold'>Appointment</h3>
                             <h1 className="text-5xl font-bold my-5 text-white">Make an appointment Today</h1>
